@@ -21,13 +21,14 @@ export default function Layout({
           <h1>
             <FormattedMessage id="heading" />
           </h1>
-          <nav>
-            <Link to="BookingForm">
-              <FormattedMessage id="bookingForm" />
-            </Link>
+          <nav> 
             <Link to="/">
               <FormattedMessage id="home" />
             </Link>
+            <Link to="BookingForm">
+              <FormattedMessage id="bookingForm" />
+            </Link>
+           
              <select onChange={handleChange} value={currentLocale}>
           {languages.map(({ name, code }) => (
             <option key={code} value={code}>
