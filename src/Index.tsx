@@ -1,7 +1,7 @@
 export const Index = () => {
   return (
     <div>
-      <p>
+      <p className="notice">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
         id nunc nec viverra. Nunc volutpat ex diam, eget fermentum ligula
         accumsan id. Sed dapibus accumsan mi, placerat vehicula nunc sodales ac.

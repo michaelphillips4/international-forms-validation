@@ -28,7 +28,8 @@ export const messages = {
     contact_Title:"Contact",
     VATnumber:"VAT number 03497090989",
     weekDayNames:"Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday",
-    monthNames:"January,February,March,April,May,June,July,August,September,October,November,December"},
+    monthNames:"January,February,March,April,May,June,July,August,September,October,November,December",
+    willsFormTitle:"Will Form - UK only"},
   [LOCALES.ITALIAN]: {
     heading: "Validazione e internazionalizzazione dei moduli",
     bookingForm: "Modulo di prenotazione",
@@ -56,6 +57,7 @@ export const messages = {
     contact_Title:"Contatti",
     VATnumber:"P.IVA 03497090989",
     weekDayNames:"Lunedì,Martedì,Mercoledì,Giovedì,Venerdì,Sabato,Domenica",
-    monthNames:"Gennaio,Febbraio,Marzo,Aprile,Maggio,Giugno,Luglio,Agosto,Settembre,Ottobre,Novembre,Dicembre"
+    monthNames:"Gennaio,Febbraio,Marzo,Aprile,Maggio,Giugno,Luglio,Agosto,Settembre,Ottobre,Novembre,Dicembre",
+    willsFormTitle:"Will Form - Solo per il Regno Unito"
   },
 };

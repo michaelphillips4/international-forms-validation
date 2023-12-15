@@ -15,6 +15,7 @@ const monthNames = stringToArrayHelper(getFormatMessage("monthNames"));
 
 
   return (
+    <div className="notice">
     <Form  defaultOption={defaultOption}
     title = {getFormatMessage("bookAnAppointment_Title")}
     shops = {getShops(defaultOption)}
@@ -26,7 +27,7 @@ const monthNames = stringToArrayHelper(getFormatMessage("monthNames"));
     namePlaceHolder = {getFormatMessage("bookAnAppointment_namePlaceHolder")}
     messageLabel ={getFormatMessage("bookAnAppointment_messageLabel")}
     buttonText ={getFormatMessage("bookAnAppointment_submitLabel")} />
-
+</div>
   );
 };
 

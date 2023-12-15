@@ -28,8 +28,8 @@ export default function Layout({
             <Link to="BookingForm">
               <FormattedMessage id="bookingForm" />
             </Link>
-            <Link to="WillForm">Will Form
-            {/*   <FormattedMessage id="bookingForm" /> */}
+            <Link to="WillForm">
+            <FormattedMessage id="willsFormTitle"/>
             </Link>
              <select onChange={handleChange} value={currentLocale}>
           {languages.map(({ name, code }) => (
@@ -41,6 +41,11 @@ export default function Layout({
           </nav>
         </header>
         <Outlet />
+        <hr />
+        <blockquote >
+        version 1.0 <br />  <a href="http://www.area2.co.uk">home </a> 
+        </blockquote>
+       
       </>
     );
   }

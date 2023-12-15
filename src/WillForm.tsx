@@ -1,5 +1,6 @@
 import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import TextWithLabel from "./components/TextWithlabel2";
+import { FormattedMessage } from "react-intl";
 
 type inputs = {
   firstName: string;
@@ -42,8 +43,8 @@ function FormExample() {
   };
 
   return (
-    <>
-      <h3>Will Form - UK only</h3>
+    <div className="notice">
+      <h3><FormattedMessage id="willsFormTitle"/></h3>
 
       <form noValidate onSubmit={onSubmit} ref={formRef}>
         <TextWithLabel
@@ -131,7 +132,7 @@ function FormExample() {
         </h3>
         {JSON.stringify(inputs)}
       </blockquote>
-    </>
+    </div>
   );
 }
 
