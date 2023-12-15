@@ -5,6 +5,7 @@ import { LOCALES } from "./i18n/locales";
 import { messages } from "./i18n/messages";
 import { Index } from "./Index";
 import  BookAnAppointment from "./bookingform/BookAnAppointment";
+import WillForm from "./WillForm";
 import Layout from "./Layout";
 
 function getInitialLocal() {
@@ -35,6 +36,7 @@ export default function App() {
         >
           <Route index element={<Index />} />
           <Route path="BookingForm" element={<BookAnAppointment />} />
+          <Route path="WillForm" element={<WillForm />} />
           <Route path="*" element={<Index />} />
         </Route>
       </Routes>

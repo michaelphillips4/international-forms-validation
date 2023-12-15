@@ -28,7 +28,9 @@ export default function Layout({
             <Link to="BookingForm">
               <FormattedMessage id="bookingForm" />
             </Link>
-           
+            <Link to="WillForm">Will Form
+            {/*   <FormattedMessage id="bookingForm" /> */}
+            </Link>
              <select onChange={handleChange} value={currentLocale}>
           {languages.map(({ name, code }) => (
             <option key={code} value={code}>

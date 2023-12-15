@@ -1,8 +1,7 @@
-import { FormattedMessage } from "react-intl";
+
 
 interface Props {
   Id: string;
-  labelMessageId: string;
   placeHolder: string;
   value: string;
   onChangeHandler: any;
@@ -10,16 +9,15 @@ interface Props {
 
 const TextWithLabel = ({
   Id,
-  labelMessageId,
   placeHolder,
   value,
   onChangeHandler  
 }: Props) => {
   return (
     <>
-      {labelMessageId && (
+      {placeHolder && (
         <label htmlFor={Id} className="form-label">
-          <FormattedMessage id={labelMessageId} />
+         {placeHolder}
         </label>
       )}
     
@@ -29,9 +27,9 @@ const TextWithLabel = ({
             id={Id}
             name={Id}
             placeholder={placeHolder}
-            onChange={(e) => onChangeHandler(e.target.value)}
+            onChange={(e) => onChangeHandler(e)}
             value={value}
-           
+           required
           />
               
           {value && 
