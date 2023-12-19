@@ -1,5 +1,5 @@
 import { useState, useRef, ChangeEvent, FormEvent } from "react";
-import TextWithLabel from "./components/TextWithlabel2";
+import TextWithLabel from "./components/TextWithlabel";
 import { FormattedMessage } from "react-intl";
 
 type inputs = {
@@ -48,56 +48,64 @@ function FormExample() {
 
       <form noValidate onSubmit={onSubmit} ref={formRef}>
         <TextWithLabel
-          Id="firstName"
+          id="firstName"
+          labelMessage="First name"
           placeHolder="First name"
           value={inputs.firstName || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="surname"
+          id="surname"
+          labelMessage="Last name"
           placeHolder="Last name"
           value={inputs.surname || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="username"
+          id="username"
+          labelMessage="User Name"
           placeHolder="User Name"
           value={inputs.username || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="addressLine1"
+          id="addressLine1"
+          labelMessage="Address Line1"
           placeHolder="Address Line1"
           value={inputs.addressLine1 || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="addressLine2"
+          id="addressLine2"
+          labelMessage="Address Line2"
           placeHolder="Address Line2"
           value={inputs.addressLine2 || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="addressLine3"
+          id="addressLine3"
+          labelMessage="Address Line3"
           placeHolder="Address Line3"
           value={inputs.addressLine3 || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="addressLine4"
+          id="addressLine4"
+          labelMessage="Address Line4"
           placeHolder="Address Line4"
           value={inputs.addressLine4 || ""}
           onChangeHandler={handleChange}
         />
 
         <TextWithLabel
-          Id="postCode"
+          id="postCode"
+          labelMessage="PostCode"
           placeHolder="PostCode"
           value={inputs.postCode || ""}
           onChangeHandler={handleChange}

@@ -43,7 +43,7 @@ export default function Layout({
         <Outlet />
         <hr />
         <blockquote >
-        version 1.0 <br />  <a href="http://www.area2.co.uk">home </a> 
+        version 1.1 <br />  <a href="http://www.area2.co.uk">home </a> 
         </blockquote>
        
       </>

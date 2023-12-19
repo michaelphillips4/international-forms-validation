@@ -1,37 +1,37 @@
-import { FormattedMessage } from "react-intl";
+import { ChangeEventHandler } from "react";
 
 interface Props {
-  Id: string;
-  labelMessageId: string;
+  id: string;
+  labelMessage: string;
   placeHolder: string;
   value: string;
-  onChangeHandler: any;
+  onChangeHandler:  ChangeEventHandler<HTMLInputElement>;
 }
 
 const TextWithLabel = ({
-  Id,
-  labelMessageId,
+  id,
+  labelMessage,
   placeHolder,
   value,
   onChangeHandler  
 }: Props) => {
   return (
     <>
-      {labelMessageId && (
-        <label htmlFor={Id} className="form-label">
-          <FormattedMessage id={labelMessageId} />
+      {labelMessage && (
+        <label htmlFor={id} className="form-label">
+          {labelMessage}
         </label>
       )}
     
           <input
             type="text"
             className="form-control "
-            id={Id}
-            name={Id}
+            id={id}
+            name={id}
             placeholder={placeHolder}
-            onChange={(e) => onChangeHandler(e.target.value)}
+            onChange={(e) => onChangeHandler(e)}
             value={value}
-           
+            required
           />
               
           {value && 

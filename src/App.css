@@ -10,6 +10,14 @@ h1{
 }
 
 .notice{
-
 margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+select {
+    width: 90%;
+}
+
+input {
+    width: 90%;
+}
 }

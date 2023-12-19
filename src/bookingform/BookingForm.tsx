@@ -1,37 +1,14 @@
 import { useReducer, useState } from "react";
 import ListWithLabel from "../components/ListWithLabel";
 import TextWithLabel from "../components/TextWithlabel";
-import { initialBooking, reducer } from "./BookingFormReducer";
-import { getDaysForMonthOptions } from "./BookingDates";
+import { initialBooking, reducer } from "./bookingFormReducer";
+import { getDaysForMonthOptions } from "./bookingDates";
 import { FormattedMessage, FormattedDate} from "react-intl";
+import { BookingFormProps } from "./bookingFormProps";
 
-interface Props {
-  defaultOption: string;
-  title: string;
-  shops: string[];
-  next12Months: Map<string, { month: number; year: number }>;
-  weekDayNames: string[];
-  timeSlots: string[];
-  namePlaceHolder: string;
-  emailPlaceHolder: string;
-  telPlaceHolder: string;
-  messageLabel: string;
-  buttonText: string;
-}
-
-const Form = ({
-  defaultOption,
-  title,
-  shops,
-  next12Months,
-  weekDayNames,
-  timeSlots,
-  emailPlaceHolder,
-  telPlaceHolder,
-  namePlaceHolder,
-  messageLabel,
-  buttonText,
-}: Props) => {
+const Form = ({defaultOption,title,shops,next12Months,weekDayNames,timeSlots,
+  shopLabel,monthLabel,dayLabel,timeLabel, nameLabel,telLabel,emailLabel,
+  emailPlaceHolder,telPlaceHolder,namePlaceHolder,messageLabel,buttonText,}: BookingFormProps) => {
 
   const [booking, dispatch] = useReducer(reducer, initialBooking);
   const [bookingComplete, setBookingComplete] = useState(false);
@@ -81,28 +58,28 @@ let bookingDate = new Date(booking.year,booking.month,parseInt(booking.day));
           <h3>{title}</h3>
 
           <ListWithLabel
-            selectId="where"
-            labelMessageId="bookAnAppointment_selectShopLabel"
+            id="where"
+            labelMessage={shopLabel}
             options={shops}
-            onChangeHandler={(v : string) =>
-              dispatch({ type: "CHANGE-SHOP", shop: clearDefaultOption(v) })
+            onChangeHandler={(e) =>
+              dispatch({ type: "CHANGE-SHOP", shop: clearDefaultOption(e.target.value) })
             }
             value={booking.shop}
           />
 
           {booking.shop && (
             <ListWithLabel
-              selectId="month"
+              id="month"
               options={[defaultOption, ...next12Months.keys()]}
-              labelMessageId="bookAnAppointment_monthLabel"
-              onChangeHandler={(v :string) => monthChangeHandler(v)}
+              labelMessage={monthLabel}
+              onChangeHandler={(e) => monthChangeHandler(e.target.value)}
               value={booking.monthKey}
             />
           )}
 
           {(booking.month !== null || booking.month) && (
             <ListWithLabel
-              selectId="days"
+              id="days"
               options={[
                 defaultOption,
                 ...getDaysForMonthOptions(
@@ -111,9 +88,9 @@ let bookingDate = new Date(booking.year,booking.month,parseInt(booking.day));
                   weekDayNames
                 ).keys(),
               ]}
-              labelMessageId="bookAnAppointment_dayLabel"
-              onChangeHandler={(v: string) =>
-                dispatch({ type: "CHANGE-DAY", day: clearDefaultOption(v) })
+              labelMessage={dayLabel}
+              onChangeHandler={(e) =>
+                dispatch({ type: "CHANGE-DAY", day: clearDefaultOption(e.target.value) })
               }
               value={booking.day}
             />
@@ -121,11 +98,11 @@ let bookingDate = new Date(booking.year,booking.month,parseInt(booking.day));
 
           {booking.day && (
             <ListWithLabel
-              selectId="time"
+              id="time"
               options={timeSlots}
-              labelMessageId="bookAnAppointment_timeLabel"
-              onChangeHandler={(v: string) =>
-                dispatch({ type: "CHANGE-TIME", time: clearDefaultOption(v) })
+              labelMessage={timeLabel}
+              onChangeHandler={(e) =>
+                dispatch({ type: "CHANGE-TIME", time: clearDefaultOption(e.target.value) })
               }
               value={booking.time}
             />
@@ -134,31 +111,31 @@ let bookingDate = new Date(booking.year,booking.month,parseInt(booking.day));
           {booking.time && (
             <>
               <TextWithLabel
-                Id="name"
-                labelMessageId="bookAnAppointment_nameLabel"
+                id="name"
+                labelMessage={nameLabel}
                 placeHolder={namePlaceHolder}
-                onChangeHandler={(v: string) =>
-                  dispatch({ type: "CHANGE-NAME", name: v })
+                onChangeHandler={(e) =>
+                  dispatch({ type: "CHANGE-NAME", name: e.target.value })
                 }
                 value={booking.name}
               />
 
               <TextWithLabel
-                Id="email"
-                labelMessageId="bookAnAppointment_emailLabel"
+                id="email"
+                labelMessage={emailLabel}
                 placeHolder={emailPlaceHolder}
-                onChangeHandler={(v: string) =>
-                  dispatch({ type: "CHANGE-EMAIL", email: v })
+                onChangeHandler={(e) =>
+                  dispatch({ type: "CHANGE-EMAIL", email: e.target.value  })
                 }
                 value={booking.email}
               />
 
               <TextWithLabel
-                Id="tel"
-                labelMessageId="bookAnAppointment_telLabel"
+                id="tel"
+                labelMessage={telLabel}
                 placeHolder={telPlaceHolder}
-                onChangeHandler={(v :string) =>
-                  dispatch({ type: "CHANGE-TEL", tel: v })
+                onChangeHandler={(e) =>
+                  dispatch({ type: "CHANGE-TEL", tel: e.target.value  })
                 }
                 value={booking.tel}
               />

@@ -1,16 +1,17 @@
-import { FormattedMessage } from "react-intl";
+import { ChangeEventHandler } from "react";
+
 
 interface ListWithLabelProps {
-  selectId: string;
-  labelMessageId: string;
+  id: string;
+  labelMessage: string;
   options: string[];
   value: string;  
-  onChangeHandler:any;  
+  onChangeHandler: ChangeEventHandler<HTMLSelectElement>;  
 }
 
 const ListWithLabel = ({
-  selectId,
-  labelMessageId,
+  id,
+  labelMessage,
   options,
   value,
   onChangeHandler
@@ -18,16 +19,16 @@ const ListWithLabel = ({
  
   return (
     <>
-      {labelMessageId && (
-        <label htmlFor={selectId} className="form-label">
-          <FormattedMessage id={labelMessageId} />
+      {labelMessage && (
+        <label htmlFor={id} className="form-label">
+          {labelMessage}
         </label>
       )}
        
  <select
-        id={selectId}
+        id={id}
         className="form-select"
-        onChange={(e) => onChangeHandler(e.target.value)}
+        onChange={(e) => onChangeHandler(e)}
         value={value}
       >
         {options &&
