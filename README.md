@@ -1,15 +1,14 @@
 # international-forms-validation
 This app demonstrates very basic internationalization.
-Also form validation input field level and for the whole form.   
-It also uses with hide and show logic for input elements. <br />
-It will allow the display of the app in Italian or English demonstrating the use of react-intl to enable internationalization. 
+Also form validation at input field level and for the whole form.   
+It has some simple hide and show logic for input elements on the booking form. <br />
 
 ## Overview 
-There is a main landing page the menu has a drop down to change the text and dates and time to be in either English or Italian. <br />
-see the for the dataset of language options ```src/i18n/messages.ts```.  
+There is a main landing page, the menu has a drop down to change the text, dates and time to be in either English or Italian. <br />
+see the for the dataset of language options [```src/i18n/messages.ts```.](https://github.com/michaelphillips4/international-forms-validation/blob/main/src/i18n/messages.ts)  
 The booking for allows you to book a fictitious appointment at a shop. This uses some simple hide and show logic and validation.<br /> 
 The Wills form demonstrates collecting basic information for lead generation.
-The backing data is displayed purely to the changing state on input.
+The backing data is displayed purely to show the changing state on user input.
 
 ## Tech stack
 It uses react  https://react.dev/ using vite https://vitejs.dev/ and type script <br />
